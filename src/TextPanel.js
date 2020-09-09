@@ -1,11 +1,13 @@
 import React from "react";
 
+import PropTypes from "prop-types";
+
 export class TextPanel extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      text: ""
+      text: ''
     };
   }
 
@@ -28,8 +30,11 @@ export class TextPanel extends React.Component {
           onChange={this.handleChange}
         ></input>
         <button onClick={this.handleSubmit}>Submit</button>
-        <div>Comp. text: {this.state.text}</div>
       </div>
     );
   }
+}
+
+TextPanel.propTypes = {
+  onChange: PropTypes.func.isRequired,
 }

@@ -1,11 +1,11 @@
 import React from "react";
 
-import { ShowText } from "./ShowText"
+import { TextList } from "./TextList"
 
 export default function App() {
   return (
     <div>
-      <ShowText />
+      <TextList />
     </div>
   );
 }
