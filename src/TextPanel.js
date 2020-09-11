@@ -1,24 +1,23 @@
 import React from "react";
-
 import PropTypes from "prop-types";
 
-export class TextPanel extends React.Component {
+// import TextList from "./TextList";
+
+export class TextPanel extends React.PureComponent {
   constructor() {
     super();
 
     this.state = {
-      text: ''
+      text: ""
     };
   }
 
-  handleChange = (e) => {
-    this.setState({
-      text: e.target.value
-    });
-  };
-
   handleSubmit = () => {
     this.props.onChange(this.state.text);
+  };
+
+  handleChange = (e) => {
+    this.setState({ text: e.target.value });
   };
 
   render() {
@@ -26,9 +25,9 @@ export class TextPanel extends React.Component {
       <div>
         <input
           type="text"
-          value={this.state.value}
+          value={this.state.text}
           onChange={this.handleChange}
-        ></input>
+        />
         <button onClick={this.handleSubmit}>Submit</button>
       </div>
     );
@@ -36,5 +35,5 @@ export class TextPanel extends React.Component {
 }
 
 TextPanel.propTypes = {
-  onChange: PropTypes.func.isRequired,
-}
+  onChange: PropTypes.func.isRequired
+};
